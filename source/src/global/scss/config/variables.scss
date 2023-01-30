@@ -1,0 +1,36 @@
+////////////////////////////////////////////////////////
+// 全体で使用する変数定義
+////////////////////////////////////////////////////////
+$contentWidth: 1170px;
+$sectionPadding: 90px;
+$contentPadding: 30px;
+
+$responsiveMode: true;
+$changePoint: md;
+
+////////////////////////////////////////////////////////
+// Breakpoint
+////////////////////////////////////////////////////////
+$breakpoint_xs: 568px;
+$breakpoint_sm: 768px;
+$breakpoint_md: 1024px;
+$breakpoint_lg: 1284px;
+
+// max-width(gridlexに合わせる)
+$breakpoint-max: (
+  "xs": "screen and (max-width:" $breakpoint_xs ")",
+  "sm": "screen and (max-width:" $breakpoint_sm ")",
+  "md": "screen and (max-width:" $breakpoint_md ")",
+  "content": "screen and (max-width:" $contentWidth + $contentPadding ")",
+  "lg": "screen and (max-width:" $breakpoint_lg ")",
+  "bp800": "screen and (max-width: 800px)",
+) !default;
+
+// min-width(gridlexに合わせる)
+$breakpoint-min: (
+  "xs": "screen and (min-width:" $breakpoint_xs ")",
+  "sm": "screen and (min-width:" $breakpoint_sm ")",
+  "md": "screen and (min-width:" $breakpoint_md ")",
+  "content": "screen and (min-width:" $contentWidth + $contentPadding ")",
+  "lg": "screen and (min-width:" $breakpoint_lg ")",
+) !default;

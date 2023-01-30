@@ -1,0 +1,39 @@
+////////////////////////////////////////////////////////
+// Mixin集
+////////////////////////////////////////////////////////
+@use "variables" as *;
+@use "sass:math";
+
+// media query max-width
+@mixin mq-max($breakpoint: sm) {
+  @media #{map-get($breakpoint-max, $breakpoint)} {
+    @content;
+  }
+}
+
+// media query min-width
+@mixin mq-min($breakpoint: sm) {
+  @media #{map-get($breakpoint-min, $breakpoint)} {
+    @content;
+  }
+}
+
+//一番外側の左右余白
+@mixin sidePaddings() {
+  padding-left: $contentPadding;
+  padding-right: $contentPadding;
+  // padding-left: 0;
+  // padding-right: 0;
+  // @include mq-max(content) {
+  //   padding-left: $contentPadding;
+  //   padding-right: $contentPadding;
+  // }
+  @include mq-max(sm) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  @include mq-max(xs) {
+    padding-left: math.div($contentPadding, 2);
+    padding-right: math.div($contentPadding, 2);
+  }
+}

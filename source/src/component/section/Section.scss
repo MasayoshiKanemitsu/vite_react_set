@@ -1,0 +1,40 @@
+////////////////////////////////////////////////////////
+// 基本ブロック
+////////////////////////////////////////////////////////
+@use "../../global/scss/config" as *; //必須読み込み
+@use "sass:math";
+
+.l-section {
+  max-width: 100%;
+  width: 100%;
+  padding: $sectionPadding 0;
+  @include mq-max($changePoint) {
+    padding: math.div($sectionPadding, 2) 0;
+  }
+  //Mod
+  &--bgGreen {
+    background-color: green;
+  }
+
+  &__container {
+    max-width: $contentWidth + $contentPadding * 2;
+    width: 100%;
+    margin: 0 auto;
+    @include sidePaddings();
+    //Mod
+    &--left {
+      margin-left: 0;
+    }
+    &--right {
+      margin-right: 0;
+    }
+  }
+
+  //基本container内で使用
+  &__inner {
+  }
+
+  //基本inner内で使用
+  &__content {
+  }
+}

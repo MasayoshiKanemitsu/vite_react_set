@@ -1,3 +1,9 @@
+# npm コマンド
+
+- npm run dev
+- npm run build
+- npm run storybook
+
 # フォルダ構造
 
 ## ■public_html

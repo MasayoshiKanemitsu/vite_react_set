@@ -9,6 +9,16 @@ export default {
     // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
     layout: "fullscreen",
   },
+  argTypes: {
+    containerClass: {
+      control: { type: "inline-radio" },
+      options: {
+        center: "",
+        left: "l-section__container--left",
+        right: "l-section__container--right",
+      },
+    },
+  },
 };
 
 const Template = (args) => {

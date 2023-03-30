@@ -1,0 +1,45 @@
+WordPressの記事をReactで取得するには、 WordPress REST API を使用する必要があります。以下はReactでWordPress REST APIを使って最新の投稿を取得する例です。
+
+まず、`axios` パッケージをインストールしましょう。
+
+```console
+npm install axios --save
+```
+
+次に、以下のコードを `App.js` ファイルに追加してください。
+
+```jsx
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+function App() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://your-wordpress-site.com/wp-json/wp/v2/posts')
+      .then(response => setPosts(response.data));
+  }, []);
+
+  return (
+    <div>
+      <h1>Latest Posts</h1>
+      {posts.map(post => (
+        <div key={post.id}>
+          <h2>{post.title.rendered}</h2>
+          <div dangerouslySetInnerHTML={{__html: post.content.rendered}} />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default App;
+```
+
+このコードでは、 `useState` フックで `posts` ステート変数を初期化し、 `useEffect` フックを使ってコンポーネントがマウントされた後に REST API からデータを取得します。
+
+REST API から返されたデータは配列形式であり、各投稿はオブジェクト形式で格納されています。`map()` メソッドを使用して、すべての投稿を表示しています。
+
+`dangerouslySetInnerHTML` プロパティを使用して、HTML形式の投稿本文を表示するようにしている点に注意してください。 これは、通常の `innerHTML` プロパティと同様に動作しますが、コードインジェクション攻撃に対処するために「dangerous（危険な）」という名前が付いています。
+
+この例では、WordPressの最新の記事を取得していますが、さまざまなフィルタリング方法やパラメータを使用して、取得される特定の投稿を制御できます。 詳細については、[WordPress REST API](https://developer.wordpress.org/rest-api/) のドキュメントを参照してください。

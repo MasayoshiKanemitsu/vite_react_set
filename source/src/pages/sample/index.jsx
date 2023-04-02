@@ -2,10 +2,13 @@ import React from "react";
 import Base from "../../layout/base/Base";
 import Section from "../../component/section/Section";
 
+//Page Status
+const pageId = "sample";
+
 const Sample = () => {
   return (
     <>
-      <Base>
+      <Base pageId={pageId}>
         {/* Section */}
         <Section>Section。max-widthあり</Section>
 

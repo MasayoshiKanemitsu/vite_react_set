@@ -3,10 +3,10 @@ import "./Base.scss";
 import Header from "../../component/header/Header";
 
 //全ページ共通のレイアウト
-const Base = ({ children }) => {
+const Base = ({ children, pageId }) => {
   return (
     <>
-      <div className='l-base'>
+      <div id={pageId} className='l-base'>
         <Header />
 
         {/* main content */}

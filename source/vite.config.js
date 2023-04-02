@@ -4,10 +4,10 @@ import generouted from "@generouted/react-router/plugin";
 
 // https://ja.vitejs.dev/config/
 export default defineConfig({
-  root: "src",
-  publicDir: "public",
+  // root: "src",
+  publicDir: "src/public",
   build: {
-    outDir: "../public_html",
+    outDir: "public_html",
   },
   server: {
     port: 3000,

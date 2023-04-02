@@ -1,11 +1,12 @@
 import React from "react";
-import Header from "../component/header/Header";
+import Base from "../layout/base/Base";
 
 const Home = () => {
   return (
     <>
-      <Header />
-      <p>Hello React.</p>
+      <Base>
+        <p>Hello React.</p>
+      </Base>
     </>
   );
 };

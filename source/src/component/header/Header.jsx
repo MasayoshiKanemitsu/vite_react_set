@@ -1,19 +1,12 @@
 import React from "react";
+import Navi from "../navi/Navi";
 import "./Header.scss";
-import { Link, useNavigate, useParams } from "../../router";
 
 const Header = () => {
   return (
     <>
       <header className='l-header'>
-        <ul>
-          <li>
-            <Link to='/'>TOP</Link>
-          </li>
-          <li>
-            <Link to='/sample'>Sample</Link>
-          </li>
-        </ul>
+        <Navi />
       </header>
     </>
   );

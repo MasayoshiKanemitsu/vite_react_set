@@ -30,3 +30,6 @@
 
 Controls について  
 https://engineering.nifty.co.jp/blog/3540
+
+Routing  
+https://github.com/oedotme/generouted#conventions
